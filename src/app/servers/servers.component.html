@@ -1,2 +1,3 @@
-<app-server></app-server>
-<app-server></app-server>
+<input type="text" class="form-control" [(ngModel)]="name">
+<p style="padding: 10px;">name of our company is {{name}}</p>
+<button class="btn btn-primary" (click)="reset()" [disabled] = "name?false:true">reset</button>
