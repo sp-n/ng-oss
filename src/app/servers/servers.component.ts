@@ -6,17 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
-  name:string = '';
-  buttonenable: boolean= true; 
-
+  servername: string = '';
+  serverview: boolean = false;
+  serverList = ['server1','server2'];
   constructor() {
    }
-  reset() {
-    this.name = '';
-  }
-
   ngOnInit() {
   }
-
+onCreateServer(){
+this.serverview = true;
+this.serverList.push(this.servername);
+}
+onClear(){
+  this.servername = '';
+  this.serverview = false;
+}
 }

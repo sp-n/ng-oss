@@ -1,1 +1,5 @@
-<p>Server2 was created</p>
+<div>
+    <p [ngStyle]="{'background-color': serverStatus === 'online' ? 'blue': 'red'}" 
+    [ngClass]="{'online': serverStatus === 'online' , 'offline': serverStatus === 'offline'}">
+    server with {{serverID}} is {{serverStatus}}</p>
+</div>

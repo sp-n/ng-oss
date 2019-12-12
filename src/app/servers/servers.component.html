@@ -1,3 +1,22 @@
-<input type="text" class="form-control" [(ngModel)]="name">
-<p style="padding: 10px;">name of our company is {{name}}</p>
-<button class="btn btn-primary" (click)="reset()" [disabled] = "name?false:true">reset</button>
+<div>
+    <p *ngIf="serverview; else createServer">server was created {{servername}}</p>
+    <ng-template #createServer>
+        create server
+    </ng-template>
+</div>
+
+<br/>
+<div class="row">
+    <div class="col col-xs-4">
+            <input type="text" [(ngModel)]="servername">
+    </div>
+    <div class="col col-xs-2">
+        <button class="btn btn-primary" (click)="onCreateServer()">Create</button>
+    </div>
+    <div class="col col-xs-2">
+        <button class="btn btn-secondary" (click)="onClear()">Reset</button>
+    </div>
+</div>
+<br/>
+<app-server *ngFor="let v of serverList"></app-server>
+
